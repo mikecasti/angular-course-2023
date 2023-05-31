@@ -1,4 +1,26 @@
 
 
+<app-person 
+    name="Fabiana" 
+    [lastName]="'Castillo'" 
+    [age]="10"
+    (print)="getPrint($event)"
+    #person1>
+</app-person>
 
-<app-operadores></app-operadores>
+<p>{{ person?.name }}</p>
+<pre>{{ person | json }}</pre>
+
+<input type="text" [(ngModel)]="student">
+<p>{{ student }}</p>
+
+<input type="number" [(ngModel)]="varA">
+<input type="number" [(ngModel)]="varB">
+
+<p>{{ varA + varB }}</p>
+
+
+last Name <input ngModel type="text" (ngModelChange)="getLastName($event)">
+
+Name <input type="text" #name>
+<button (click)="printName(person1)">Print Name</button>

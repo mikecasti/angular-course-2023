@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IPerson } from './person/person.model';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,44 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'course-rsoft';
 
+    // public person : IPerson = {
+  //   name:'',
+  //   lastName:'',
+  //   age: 0
+  // };
+
+  public person! : IPerson;
+
+
+  public student: string = 'Axel Castillo Villca';
+
+  public varA = 0;
+  public varB = 0;
+
   constructor() {
     console.log('constructor');
   }
 
   getName(name: string): string {
     return 'constructor ' + name;
+  }
+
+  getPrint(event: IPerson) {
+    console.log('data', event);
+    this.person = event;
+  }
+
+  public getLastName(event: any) : void {
+    console.log('Last Name:', event);
+    
+  }
+
+  empleadoLista:string="";
+
+
+  public printName(name: any) : void {
+    console.log('Print Name', name);
+    
   }
 
   //función Flecha
