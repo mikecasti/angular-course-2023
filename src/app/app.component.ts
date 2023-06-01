@@ -7,13 +7,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'course-rsoft';
+  public name: string = "Axel";
+  public lastName: string = "Castillo";
+  public level:number = 1;
+  public enablePerson: boolean = true;
 
   constructor() {
-    console.log('constructor');
+    // console.log('constructor');
   }
 
   getName(name: string): string {
     return 'constructor ' + name;
+  }
+
+  changeName(): void {
+    this.name = 'Ana María Ocampo Galarza';
+    this.lastName = 'Castillo Villca'
   }
 
   //función Flecha
