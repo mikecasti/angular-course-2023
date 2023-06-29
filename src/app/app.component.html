@@ -1,4 +1,48 @@
+<p>Angular</p>
+
+<h1>ngIF</h1>
+<button (click)="enablePerson = !enablePerson">Crear / Destruir</button>
+
+<app-person *ngIf="enablePerson">
+    <button>Print ngIf</button>
+</app-person>
+
+<br>
+<hr>
+<br>
+
+<app-person [hidden]="!enablePerson">
+    <button>Print Hidden</button>
+</app-person>
+
+<p *ngIf="enablePerson;else paraFalse">La variable enablePerson es: True</p>
+<ng-template #paraFalse>
+    <p>La variable enablePerson es: False - Template</p>
+</ng-template>
+
+<br>
+<hr>
+<h1>ngFor</h1>
+
+<div *ngFor="let item of ['Mike','Faby','Axel','Susy','Ana','Luis']; let i = index;">
+    <p>{{ i + 1 }} - Hola {{ item }}</p>
+
+    <app-person [name]="item">
+        <button>Hola {{ item }}</button>
+    </app-person>
+</div>
 
 
+<br>
+<hr>
+<h1>ngSwitch</h1>
+<br>
+<input type="number" [(ngModel)]="level">
 
-<app-operadores></app-operadores>
+<div [ngSwitch]="level">
+    <p *ngSwitchCase="1">Nivel 1</p>
+    <p *ngSwitchCase="2">Nivel 2</p>
+    <p *ngSwitchCase="3">Nivel 3</p>
+    <p *ngSwitchDefault>Opción por defecto</p>
+</div>
+

@@ -8,6 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'course-rsoft';
 
+  public enablePerson:boolean = true;
+  public level: number = 1;
+
   constructor() {
     console.log('constructor');
   }
